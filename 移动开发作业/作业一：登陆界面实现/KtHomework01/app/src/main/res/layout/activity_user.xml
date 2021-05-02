@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="0dp"
+    android:background="@drawable/bg_1"
+
+    >
+
+    <TextView
+        android:id="@+id/title_user"
+
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center_vertical"
+
+        android:text="物流管理系统V1.0"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+
+        android:background="@drawable/bg_title_2"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/bg_title_2"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            >
+            <ImageView
+                android:id="@id/pic_user"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@mipmap/user"
+                android:background="@drawable/bg_img"
+                android:scaleType="centerInside"/>
+            <EditText
+                android:id="@id/username"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="5"
+                android:background="@drawable/bg_text"
+                android:textSize="30dp"
+                android:textColor="@color/black"
+                android:gravity="left"
+                android:maxLines="1"
+                android:paddingLeft="10dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:layout_marginTop="10dp"
+            >
+            <ImageView
+                android:id="@id/pic_password"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@mipmap/pd"
+                android:background="@drawable/bg_img"
+                android:scaleType="centerInside"/>
+            <EditText
+                android:id="@id/password"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="5"
+                android:background="@drawable/bg_text"
+
+                android:textSize="30dp"
+                android:textColor="@color/black"
+                android:gravity="left"
+                android:maxLines="1"
+                android:paddingLeft="10dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/bg_title_2"
+        android:padding="25dp"
+        >
+
+        <Button
+            android:id="@+id/button_change"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/bg_button"
+            android:text="切换用户"
+            android:textColor="@color/white"
+
+            android:textSize="25dp"
+            />
+
+        <Button
+            android:id="@id/button_exit"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/bg_button"
+            android:text="退出"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+
+
+            android:textSize="25dp" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

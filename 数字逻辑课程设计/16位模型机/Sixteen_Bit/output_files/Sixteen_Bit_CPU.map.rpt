@@ -1,0 +1,679 @@
+Analysis & Synthesis report for Sixteen_Bit_CPU
+Sun Jul 19 21:18:39 2020
+Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Jul 19 21:18:39 2020       ;
+; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Full Version ;
+; Revision Name                      ; Sixteen_Bit_CPU                             ;
+; Top-level Entity Name              ; Sixteen_Bit_CPU                             ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 915                                         ;
+;     Total combinational functions  ; 889                                         ;
+;     Dedicated logic registers      ; 68                                          ;
+; Total registers                    ; 68                                          ;
+; Total pins                         ; 86                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE6E22C8        ;                    ;
+; Top-level entity name                                                      ; Sixteen_Bit_CPU    ; Sixteen_Bit_CPU    ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                           ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                    ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------+---------+
+; MAREG.vhd                        ; yes             ; User VHDL File  ; F:/Code/Quartus/Sixteen_Bit/MAREG.vhd           ;         ;
+; IREG.vhd                         ; yes             ; User VHDL File  ; F:/Code/Quartus/Sixteen_Bit/IREG.vhd            ;         ;
+; COUNTER.vhd                      ; yes             ; User VHDL File  ; F:/Code/Quartus/Sixteen_Bit/COUNTER.vhd         ;         ;
+; ALU.vhd                          ; yes             ; User VHDL File  ; F:/Code/Quartus/Sixteen_Bit/ALU.vhd             ;         ;
+; DREG.vhd                         ; yes             ; User VHDL File  ; F:/Code/Quartus/Sixteen_Bit/DREG.vhd            ;         ;
+; CTRL.vhd                         ; yes             ; User VHDL File  ; F:/Code/Quartus/Sixteen_Bit/CTRL.vhd            ;         ;
+; CLOCK.vhd                        ; yes             ; User VHDL File  ; F:/Code/Quartus/Sixteen_Bit/CLOCK.vhd           ;         ;
+; PC.vhd                           ; yes             ; User VHDL File  ; F:/Code/Quartus/Sixteen_Bit/PC.vhd              ;         ;
+; RAM.vhd                          ; yes             ; User VHDL File  ; F:/Code/Quartus/Sixteen_Bit/RAM.vhd             ;         ;
+; Sixteen_Bit_CPU.vhd              ; yes             ; User VHDL File  ; F:/Code/Quartus/Sixteen_Bit/Sixteen_Bit_CPU.vhd ;         ;
+; dbus.vhd                         ; yes             ; User VHDL File  ; F:/Code/Quartus/Sixteen_Bit/dbus.vhd            ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------+---------+
+
+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Estimated Total logic elements              ; 915             ;
+;                                             ;                 ;
+; Total combinational functions               ; 889             ;
+; Logic element usage by number of LUT inputs ;                 ;
+;     -- 4 input functions                    ; 344             ;
+;     -- 3 input functions                    ; 489             ;
+;     -- <=2 input functions                  ; 56              ;
+;                                             ;                 ;
+; Logic elements by mode                      ;                 ;
+;     -- normal mode                          ; 739             ;
+;     -- arithmetic mode                      ; 150             ;
+;                                             ;                 ;
+; Total registers                             ; 68              ;
+;     -- Dedicated logic registers            ; 68              ;
+;     -- I/O registers                        ; 0               ;
+;                                             ;                 ;
+; I/O pins                                    ; 86              ;
+;                                             ;                 ;
+; Embedded Multiplier 9-bit elements          ; 0               ;
+;                                             ;                 ;
+; Maximum fan-out node                        ; CLOCK:CL|temp~0 ;
+; Maximum fan-out                             ; 65              ;
+; Total fan-out                               ; 3318            ;
+; Average fan-out                             ; 2.94            ;
++---------------------------------------------+-----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                 ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name         ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+--------------+
+; |Sixteen_Bit_CPU           ; 889 (16)          ; 68 (0)       ; 0           ; 0            ; 0       ; 0         ; 86   ; 0            ; |Sixteen_Bit_CPU            ; work         ;
+;    |ALU:A|                 ; 306 (306)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Sixteen_Bit_CPU|ALU:A      ; work         ;
+;    |CLOCK:CL|              ; 6 (6)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Sixteen_Bit_CPU|CLOCK:CL   ; work         ;
+;    |COUNTER:CT|            ; 2 (2)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Sixteen_Bit_CPU|COUNTER:CT ; work         ;
+;    |CTRL:CTRLM|            ; 37 (37)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Sixteen_Bit_CPU|CTRL:CTRLM ; work         ;
+;    |DREG:ACC|              ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Sixteen_Bit_CPU|DREG:ACC   ; work         ;
+;    |DREG:DR|               ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Sixteen_Bit_CPU|DREG:DR    ; work         ;
+;    |IREG:IR|               ; 44 (44)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Sixteen_Bit_CPU|IREG:IR    ; work         ;
+;    |MAREG:MAR|             ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Sixteen_Bit_CPU|MAREG:MAR  ; work         ;
+;    |PC:P|                  ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Sixteen_Bit_CPU|PC:P       ; work         ;
+;    |RAM:RAMM|              ; 449 (449)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Sixteen_Bit_CPU|RAM:RAMM   ; work         ;
+;    |dbus:d|                ; 24 (24)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Sixteen_Bit_CPU|dbus:d     ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                 ;
++------------------------------------------------------+---------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal ; Free of Timing Hazards ;
++------------------------------------------------------+---------------------+------------------------+
+; ALU:A|Zero                                           ; CTRL:CTRLM|R        ; yes                    ;
+; ALU:A|Over                                           ; CTRL:CTRLM|R        ; yes                    ;
+; ALU:A|Nege                                           ; CTRL:CTRLM|R        ; yes                    ;
+; ALU:A|DO[0]                                          ; CTRL:CTRLM|R        ; yes                    ;
+; ALU:A|DO[1]                                          ; CTRL:CTRLM|R        ; yes                    ;
+; ALU:A|DO[2]                                          ; CTRL:CTRLM|R        ; yes                    ;
+; ALU:A|DO[3]                                          ; CTRL:CTRLM|R        ; yes                    ;
+; ALU:A|DO[4]                                          ; CTRL:CTRLM|R        ; yes                    ;
+; ALU:A|DO[5]                                          ; CTRL:CTRLM|R        ; yes                    ;
+; ALU:A|DO[6]                                          ; CTRL:CTRLM|R        ; yes                    ;
+; ALU:A|DO[7]                                          ; CTRL:CTRLM|R        ; yes                    ;
+; ALU:A|DO[8]                                          ; CTRL:CTRLM|R        ; yes                    ;
+; ALU:A|DO[9]                                          ; CTRL:CTRLM|R        ; yes                    ;
+; ALU:A|DO[10]                                         ; CTRL:CTRLM|R        ; yes                    ;
+; ALU:A|DO[11]                                         ; CTRL:CTRLM|R        ; yes                    ;
+; ALU:A|DO[12]                                         ; CTRL:CTRLM|R        ; yes                    ;
+; ALU:A|DO[13]                                         ; CTRL:CTRLM|R        ; yes                    ;
+; ALU:A|DO[14]                                         ; CTRL:CTRLM|R        ; yes                    ;
+; ALU:A|DO[15]                                         ; CTRL:CTRLM|R        ; yes                    ;
+; ALU:A|temp[8]                                        ; ALU:A|temp[0]       ; yes                    ;
+; ALU:A|temp[9]                                        ; ALU:A|temp[0]       ; yes                    ;
+; ALU:A|temp[10]                                       ; ALU:A|temp[0]       ; yes                    ;
+; ALU:A|temp[11]                                       ; ALU:A|temp[0]       ; yes                    ;
+; ALU:A|temp[12]                                       ; ALU:A|temp[0]       ; yes                    ;
+; ALU:A|temp[13]                                       ; ALU:A|temp[0]       ; yes                    ;
+; ALU:A|temp[14]                                       ; ALU:A|temp[0]       ; yes                    ;
+; ALU:A|temp[15]                                       ; ALU:A|temp[0]       ; yes                    ;
+; ALU:A|temp[1]                                        ; ALU:A|temp[0]       ; yes                    ;
+; ALU:A|temp[6]                                        ; ALU:A|temp[0]       ; yes                    ;
+; ALU:A|temp[2]                                        ; ALU:A|temp[0]       ; yes                    ;
+; ALU:A|temp[3]                                        ; ALU:A|temp[0]       ; yes                    ;
+; ALU:A|temp[4]                                        ; ALU:A|temp[0]       ; yes                    ;
+; ALU:A|temp[5]                                        ; ALU:A|temp[0]       ; yes                    ;
+; ALU:A|temp[0]                                        ; ALU:A|temp[0]       ; yes                    ;
+; ALU:A|temp[7]                                        ; ALU:A|temp[0]       ; yes                    ;
+; CLOCK:CL|temp                                        ; CLOCK:CL|Equal0     ; yes                    ;
+; RAM:RAMM|DO[0]                                       ; RAM:RAMM|DO[15]     ; yes                    ;
+; RAM:RAMM|DO[1]                                       ; RAM:RAMM|DO[15]     ; yes                    ;
+; RAM:RAMM|DO[2]                                       ; RAM:RAMM|DO[15]     ; yes                    ;
+; RAM:RAMM|DO[3]                                       ; RAM:RAMM|DO[15]     ; yes                    ;
+; RAM:RAMM|DO[4]                                       ; RAM:RAMM|DO[15]     ; yes                    ;
+; RAM:RAMM|DO[5]                                       ; RAM:RAMM|DO[15]     ; yes                    ;
+; RAM:RAMM|DO[6]                                       ; RAM:RAMM|DO[15]     ; yes                    ;
+; RAM:RAMM|DO[7]                                       ; RAM:RAMM|DO[15]     ; yes                    ;
+; RAM:RAMM|DO[8]                                       ; RAM:RAMM|DO[15]     ; yes                    ;
+; RAM:RAMM|DO[9]                                       ; RAM:RAMM|DO[15]     ; yes                    ;
+; RAM:RAMM|DO[10]                                      ; RAM:RAMM|DO[15]     ; yes                    ;
+; RAM:RAMM|DO[11]                                      ; RAM:RAMM|DO[15]     ; yes                    ;
+; RAM:RAMM|DO[12]                                      ; RAM:RAMM|DO[15]     ; yes                    ;
+; RAM:RAMM|DO[13]                                      ; RAM:RAMM|DO[15]     ; yes                    ;
+; RAM:RAMM|DO[14]                                      ; RAM:RAMM|DO[15]     ; yes                    ;
+; RAM:RAMM|DO[15]                                      ; RAM:RAMM|DO[15]     ; yes                    ;
+; RAM:RAMM|Data~160                                    ; rtl~0               ; yes                    ;
+; RAM:RAMM|Data~144                                    ; rtl~1               ; yes                    ;
+; RAM:RAMM|Data~128                                    ; rtl~2               ; yes                    ;
+; RAM:RAMM|Data~176                                    ; rtl~3               ; yes                    ;
+; RAM:RAMM|Data~80                                     ; rtl~4               ; yes                    ;
+; RAM:RAMM|Data~96                                     ; rtl~5               ; yes                    ;
+; RAM:RAMM|Data~64                                     ; rtl~6               ; yes                    ;
+; RAM:RAMM|Data~112                                    ; rtl~7               ; yes                    ;
+; RAM:RAMM|Data~32                                     ; rtl~8               ; yes                    ;
+; RAM:RAMM|Data~16                                     ; rtl~9               ; yes                    ;
+; RAM:RAMM|Data~0                                      ; rtl~10              ; yes                    ;
+; RAM:RAMM|Data~48                                     ; rtl~11              ; yes                    ;
+; RAM:RAMM|Data~208                                    ; rtl~12              ; yes                    ;
+; RAM:RAMM|Data~224                                    ; rtl~13              ; yes                    ;
+; RAM:RAMM|Data~192                                    ; rtl~14              ; yes                    ;
+; RAM:RAMM|Data~240                                    ; rtl~15              ; yes                    ;
+; RAM:RAMM|Data~97                                     ; rtl~5               ; yes                    ;
+; RAM:RAMM|Data~161                                    ; rtl~0               ; yes                    ;
+; RAM:RAMM|Data~33                                     ; rtl~8               ; yes                    ;
+; RAM:RAMM|Data~225                                    ; rtl~13              ; yes                    ;
+; RAM:RAMM|Data~145                                    ; rtl~1               ; yes                    ;
+; RAM:RAMM|Data~81                                     ; rtl~4               ; yes                    ;
+; RAM:RAMM|Data~17                                     ; rtl~9               ; yes                    ;
+; RAM:RAMM|Data~209                                    ; rtl~12              ; yes                    ;
+; RAM:RAMM|Data~65                                     ; rtl~6               ; yes                    ;
+; RAM:RAMM|Data~129                                    ; rtl~2               ; yes                    ;
+; RAM:RAMM|Data~1                                      ; rtl~10              ; yes                    ;
+; RAM:RAMM|Data~193                                    ; rtl~14              ; yes                    ;
+; RAM:RAMM|Data~177                                    ; rtl~3               ; yes                    ;
+; RAM:RAMM|Data~113                                    ; rtl~7               ; yes                    ;
+; RAM:RAMM|Data~49                                     ; rtl~11              ; yes                    ;
+; RAM:RAMM|Data~241                                    ; rtl~15              ; yes                    ;
+; RAM:RAMM|Data~98                                     ; rtl~5               ; yes                    ;
+; RAM:RAMM|Data~82                                     ; rtl~4               ; yes                    ;
+; RAM:RAMM|Data~66                                     ; rtl~6               ; yes                    ;
+; RAM:RAMM|Data~114                                    ; rtl~7               ; yes                    ;
+; RAM:RAMM|Data~146                                    ; rtl~1               ; yes                    ;
+; RAM:RAMM|Data~162                                    ; rtl~0               ; yes                    ;
+; RAM:RAMM|Data~130                                    ; rtl~2               ; yes                    ;
+; RAM:RAMM|Data~178                                    ; rtl~3               ; yes                    ;
+; RAM:RAMM|Data~18                                     ; rtl~9               ; yes                    ;
+; RAM:RAMM|Data~34                                     ; rtl~8               ; yes                    ;
+; RAM:RAMM|Data~2                                      ; rtl~10              ; yes                    ;
+; RAM:RAMM|Data~50                                     ; rtl~11              ; yes                    ;
+; RAM:RAMM|Data~226                                    ; rtl~13              ; yes                    ;
+; RAM:RAMM|Data~210                                    ; rtl~12              ; yes                    ;
+; RAM:RAMM|Data~194                                    ; rtl~14              ; yes                    ;
+; RAM:RAMM|Data~242                                    ; rtl~15              ; yes                    ;
+; Number of user-specified and inferred latches = 308  ;                     ;                        ;
++------------------------------------------------------+---------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 68    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 16    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 52    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; COUNTER:CT|temp[0]                     ; 6       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |Sixteen_Bit_CPU|ALU:A|temp ;
+; 13:1               ; 32 bits   ; 256 LEs       ; 96 LEs               ; 160 LEs                ; No         ; |Sixteen_Bit_CPU|ALU:A|temp ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 86                          ;
+; cycloneiii_ff         ; 68                          ;
+;     CLR               ; 16                          ;
+;     ENA               ; 52                          ;
+; cycloneiii_io_obuf    ; 16                          ;
+; cycloneiii_lcell_comb ; 893                         ;
+;     arith             ; 150                         ;
+;         2 data inputs ; 31                          ;
+;         3 data inputs ; 119                         ;
+;     normal            ; 743                         ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 20                          ;
+;         3 data inputs ; 370                         ;
+;         4 data inputs ; 344                         ;
+;                       ;                             ;
+; Max LUT depth         ; 18.50                       ;
+; Average LUT depth     ; 6.84                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 15.0.0 Build 145 04/22/2015 SJ Full Version
+    Info: Processing started: Sun Jul 19 21:18:27 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Sixteen_Bit_CPU -c Sixteen_Bit_CPU
+Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 6 of the 6 physical processors detected instead.
+Info (12021): Found 2 design units, including 1 entities, in source file mareg.vhd
+    Info (12022): Found design unit 1: MAREG-vhd_marge
+    Info (12023): Found entity 1: MAREG
+Info (12021): Found 2 design units, including 1 entities, in source file ireg.vhd
+    Info (12022): Found design unit 1: IREG-vhd_ireg
+    Info (12023): Found entity 1: IREG
+Info (12021): Found 2 design units, including 1 entities, in source file counter.vhd
+    Info (12022): Found design unit 1: COUNTER-vhd_counter
+    Info (12023): Found entity 1: COUNTER
+Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: ALU-vhd_alu
+    Info (12023): Found entity 1: ALU
+Info (12021): Found 2 design units, including 1 entities, in source file dreg.vhd
+    Info (12022): Found design unit 1: DREG-vhd_dreg
+    Info (12023): Found entity 1: DREG
+Info (12021): Found 2 design units, including 1 entities, in source file ctrl.vhd
+    Info (12022): Found design unit 1: CTRL-vhd_ctrl
+    Info (12023): Found entity 1: CTRL
+Info (12021): Found 2 design units, including 1 entities, in source file clock.vhd
+    Info (12022): Found design unit 1: CLOCK-vhd
+    Info (12023): Found entity 1: CLOCK
+Info (12021): Found 2 design units, including 1 entities, in source file pc.vhd
+    Info (12022): Found design unit 1: PC-vhd_pc
+    Info (12023): Found entity 1: PC
+Info (12021): Found 2 design units, including 1 entities, in source file ram.vhd
+    Info (12022): Found design unit 1: RAM-vhd_ram
+    Info (12023): Found entity 1: RAM
+Info (12021): Found 2 design units, including 1 entities, in source file sixteen_bit_cpu.vhd
+    Info (12022): Found design unit 1: Sixteen_Bit_CPU-vhd
+    Info (12023): Found entity 1: Sixteen_Bit_CPU
+Info (12021): Found 2 design units, including 1 entities, in source file dbus.vhd
+    Info (12022): Found design unit 1: dbus-vhd
+    Info (12023): Found entity 1: dbus
+Info (12127): Elaborating entity "Sixteen_Bit_CPU" for the top level hierarchy
+Info (12128): Elaborating entity "CLOCK" for hierarchy "CLOCK:CL"
+Warning (10542): VHDL Variable Declaration warning at CLOCK.vhd(17): used initial value expression for variable "T" because variable was never assigned a value
+Warning (10492): VHDL Process Statement warning at CLOCK.vhd(22): signal "temp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at CLOCK.vhd(16): inferring latch(es) for signal or variable "temp", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "temp" at CLOCK.vhd(16)
+Info (12128): Elaborating entity "COUNTER" for hierarchy "COUNTER:CT"
+Info (12128): Elaborating entity "CTRL" for hierarchy "CTRL:CTRLM"
+Warning (10036): Verilog HDL or VHDL warning at CTRL.vhd(23): object "T7" assigned a value but never read
+Info (12128): Elaborating entity "IREG" for hierarchy "IREG:IR"
+Info (12128): Elaborating entity "DREG" for hierarchy "DREG:DR"
+Info (12128): Elaborating entity "PC" for hierarchy "PC:P"
+Info (12128): Elaborating entity "MAREG" for hierarchy "MAREG:MAR"
+Info (12128): Elaborating entity "RAM" for hierarchy "RAM:RAMM"
+Warning (10631): VHDL Process Statement warning at RAM.vhd(19): inferring latch(es) for signal or variable "DO", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "DO[0]" at RAM.vhd(19)
+Info (10041): Inferred latch for "DO[1]" at RAM.vhd(19)
+Info (10041): Inferred latch for "DO[2]" at RAM.vhd(19)
+Info (10041): Inferred latch for "DO[3]" at RAM.vhd(19)
+Info (10041): Inferred latch for "DO[4]" at RAM.vhd(19)
+Info (10041): Inferred latch for "DO[5]" at RAM.vhd(19)
+Info (10041): Inferred latch for "DO[6]" at RAM.vhd(19)
+Info (10041): Inferred latch for "DO[7]" at RAM.vhd(19)
+Info (10041): Inferred latch for "DO[8]" at RAM.vhd(19)
+Info (10041): Inferred latch for "DO[9]" at RAM.vhd(19)
+Info (10041): Inferred latch for "DO[10]" at RAM.vhd(19)
+Info (10041): Inferred latch for "DO[11]" at RAM.vhd(19)
+Info (10041): Inferred latch for "DO[12]" at RAM.vhd(19)
+Info (10041): Inferred latch for "DO[13]" at RAM.vhd(19)
+Info (10041): Inferred latch for "DO[14]" at RAM.vhd(19)
+Info (10041): Inferred latch for "DO[15]" at RAM.vhd(19)
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:A"
+Warning (10492): VHDL Process Statement warning at ALU.vhd(27): signal "Code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ALU.vhd(34): signal "Code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ALU.vhd(41): signal "Code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ALU.vhd(48): signal "Code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ALU.vhd(55): signal "Code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ALU.vhd(57): signal "Code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ALU.vhd(59): signal "Code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ALU.vhd(61): signal "Code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at ALU.vhd(18): inferring latch(es) for signal or variable "Zero", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ALU.vhd(18): inferring latch(es) for signal or variable "Over", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ALU.vhd(18): inferring latch(es) for signal or variable "Nege", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ALU.vhd(18): inferring latch(es) for signal or variable "temp", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ALU.vhd(18): inferring latch(es) for signal or variable "DO", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "DO[0]" at ALU.vhd(18)
+Info (10041): Inferred latch for "DO[1]" at ALU.vhd(18)
+Info (10041): Inferred latch for "DO[2]" at ALU.vhd(18)
+Info (10041): Inferred latch for "DO[3]" at ALU.vhd(18)
+Info (10041): Inferred latch for "DO[4]" at ALU.vhd(18)
+Info (10041): Inferred latch for "DO[5]" at ALU.vhd(18)
+Info (10041): Inferred latch for "DO[6]" at ALU.vhd(18)
+Info (10041): Inferred latch for "DO[7]" at ALU.vhd(18)
+Info (10041): Inferred latch for "DO[8]" at ALU.vhd(18)
+Info (10041): Inferred latch for "DO[9]" at ALU.vhd(18)
+Info (10041): Inferred latch for "DO[10]" at ALU.vhd(18)
+Info (10041): Inferred latch for "DO[11]" at ALU.vhd(18)
+Info (10041): Inferred latch for "DO[12]" at ALU.vhd(18)
+Info (10041): Inferred latch for "DO[13]" at ALU.vhd(18)
+Info (10041): Inferred latch for "DO[14]" at ALU.vhd(18)
+Info (10041): Inferred latch for "DO[15]" at ALU.vhd(18)
+Info (10041): Inferred latch for "Nege" at ALU.vhd(18)
+Info (10041): Inferred latch for "Over" at ALU.vhd(18)
+Info (10041): Inferred latch for "Zero" at ALU.vhd(18)
+Info (10041): Inferred latch for "temp[0]" at ALU.vhd(21)
+Info (10041): Inferred latch for "temp[1]" at ALU.vhd(21)
+Info (10041): Inferred latch for "temp[2]" at ALU.vhd(21)
+Info (10041): Inferred latch for "temp[3]" at ALU.vhd(21)
+Info (10041): Inferred latch for "temp[4]" at ALU.vhd(21)
+Info (10041): Inferred latch for "temp[5]" at ALU.vhd(21)
+Info (10041): Inferred latch for "temp[6]" at ALU.vhd(21)
+Info (10041): Inferred latch for "temp[7]" at ALU.vhd(21)
+Info (10041): Inferred latch for "temp[8]" at ALU.vhd(21)
+Info (10041): Inferred latch for "temp[9]" at ALU.vhd(21)
+Info (10041): Inferred latch for "temp[10]" at ALU.vhd(21)
+Info (10041): Inferred latch for "temp[11]" at ALU.vhd(21)
+Info (10041): Inferred latch for "temp[12]" at ALU.vhd(21)
+Info (10041): Inferred latch for "temp[13]" at ALU.vhd(21)
+Info (10041): Inferred latch for "temp[14]" at ALU.vhd(21)
+Info (10041): Inferred latch for "temp[15]" at ALU.vhd(21)
+Info (12128): Elaborating entity "dbus" for hierarchy "dbus:d"
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "DREG:ACC|DO[0]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:ACC|DO[1]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:ACC|DO[2]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:ACC|DO[3]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:ACC|DO[4]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:ACC|DO[5]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:ACC|DO[6]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:ACC|DO[7]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:ACC|DO[8]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:ACC|DO[9]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:ACC|DO[10]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:ACC|DO[11]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:ACC|DO[12]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:ACC|DO[13]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:ACC|DO[14]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:ACC|DO[15]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:DR|DO[0]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:DR|DO[1]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:DR|DO[2]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:DR|DO[3]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:DR|DO[4]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:DR|DO[5]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:DR|DO[6]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:DR|DO[7]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:DR|DO[8]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:DR|DO[9]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:DR|DO[10]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:DR|DO[11]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:DR|DO[12]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:DR|DO[13]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:DR|DO[14]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "DREG:DR|DO[15]" feeding internal logic into a wire
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13047): Converted the fan-out from the tri-state buffer "ALU:A|ALU_OUT[0]" to the node "dbus:d|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "ALU:A|ALU_OUT[1]" to the node "dbus:d|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "ALU:A|ALU_OUT[2]" to the node "dbus:d|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "ALU:A|ALU_OUT[3]" to the node "dbus:d|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "ALU:A|ALU_OUT[4]" to the node "dbus:d|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "ALU:A|ALU_OUT[5]" to the node "dbus:d|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "ALU:A|ALU_OUT[6]" to the node "dbus:d|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "ALU:A|ALU_OUT[7]" to the node "dbus:d|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "ALU:A|ALU_OUT[8]" to the node "dbus:d|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "ALU:A|ALU_OUT[9]" to the node "dbus:d|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "ALU:A|ALU_OUT[10]" to the node "dbus:d|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "ALU:A|ALU_OUT[11]" to the node "dbus:d|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "ALU:A|ALU_OUT[12]" to the node "dbus:d|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "ALU:A|ALU_OUT[13]" to the node "dbus:d|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "ALU:A|ALU_OUT[14]" to the node "dbus:d|Equal0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "ALU:A|ALU_OUT[15]" to the node "dbus:d|Equal0" into an OR gate
+Warning (13012): Latch ALU:A|Zero has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|Over has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|WideOr0
+Warning (13012): Latch ALU:A|Nege has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|WideNor0
+Warning (13012): Latch ALU:A|DO[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|DO[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|DO[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|DO[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|DO[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|DO[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|DO[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|DO[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|DO[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|DO[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|DO[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|DO[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|DO[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|DO[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|DO[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|DO[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|temp[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|temp[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|temp[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|temp[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|temp[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|temp[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|temp[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|temp[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|temp[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|temp[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|temp[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|temp[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|temp[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|temp[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|temp[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Warning (13012): Latch ALU:A|temp[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IREG:IR|temp[15]
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1033 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 24 input pins
+    Info (21059): Implemented 62 output pins
+    Info (21061): Implemented 947 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 138 warnings
+    Info: Peak virtual memory: 4880 megabytes
+    Info: Processing ended: Sun Jul 19 21:18:39 2020
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:25
+
+

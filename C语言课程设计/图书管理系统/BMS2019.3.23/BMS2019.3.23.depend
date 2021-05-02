@@ -1,0 +1,60 @@
+# depslib dependency file v1.0
+1553282415 source:c:\users\kai_2000_09_07\desktop\bms2019.3.23\booksfiles.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<conio.h>
+	"Chain.h"
+
+1553282683 c:\users\kai_2000_09_07\desktop\bms2019.3.23\chain.h
+
+1553307483 source:c:\users\kai_2000_09_07\desktop\bms2019.3.23\user.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<conio.h>
+	"Chain.h"
+
+1553303467 source:c:\users\kai_2000_09_07\desktop\bms2019.3.23\booksoperate.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<conio.h>
+	"Chain.h"
+
+1553303467 source:c:\users\kai_2000_09_07\desktop\bms2019.3.23\bookssearch.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<conio.h>
+	"Chain.h"
+
+1553307706 source:c:\users\kai_2000_09_07\desktop\bms2019.3.23\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<conio.h>
+	"Chain.h"
+	<windows.h>
+
+1553282823 source:c:\users\kai_2000_09_07\desktop\bms2019.3.23\usersfile.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<conio.h>
+	"Chain.h"
+
+1553313149 source:c:\users\kai_2000_09_07\desktop\bms2019.3.23\administrato.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<conio.h>
+	"Chain.h"
+

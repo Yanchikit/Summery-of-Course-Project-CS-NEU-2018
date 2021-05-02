@@ -1,0 +1,94 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dF:/Code/Quartus/Sixteen_Bit/simulation/qsim
+vSixteen_Bit_CPU
+Z1 !s110 1594567733
+!i10b 1
+!s100 1AGCTAe1]zE<NR_d[gnha1
+IP?m@=n;Q8mD]9kj]aC8^S3
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+R0
+w1594567731
+8Sixteen_Bit_CPU.vo
+FSixteen_Bit_CPU.vo
+L0 32
+Z3 OV;L;10.3d;59
+r1
+!s85 0
+31
+!s108 1594567732.902000
+!s107 Sixteen_Bit_CPU.vo|
+!s90 -work|work|Sixteen_Bit_CPU.vo|
+!i113 1
+Z4 o-work work
+n@sixteen_@bit_@c@p@u
+vSixteen_Bit_CPU_vlg_check_tst
+R1
+!i10b 1
+!s100 dM`cg7W2TQ3ZfiHnGHF^63
+ImfXz[f_4nA5QE>j1T0J_<2
+R2
+R0
+Z5 w1594567730
+Z6 8Waveform.vwf.vt
+Z7 FWaveform.vwf.vt
+L0 68
+R3
+r1
+!s85 0
+31
+Z8 !s108 1594567733.075000
+Z9 !s107 Waveform.vwf.vt|
+Z10 !s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R4
+n@sixteen_@bit_@c@p@u_vlg_check_tst
+vSixteen_Bit_CPU_vlg_sample_tst
+R1
+!i10b 1
+!s100 iP?V7fGRQnd]I9dOkZ7zW1
+I7K0:[3HZU_^E<:bl[D[6j2
+R2
+R0
+R5
+R6
+R7
+L0 30
+R3
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R4
+n@sixteen_@bit_@c@p@u_vlg_sample_tst
+vSixteen_Bit_CPU_vlg_vec_tst
+R1
+!i10b 1
+!s100 2gkZ9WIbJ7gBKg`[J0I>_0
+I]8d31oB=_K`ANe5^agGlR2
+R2
+R0
+R5
+R6
+R7
+L0 1122
+R3
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R4
+n@sixteen_@bit_@c@p@u_vlg_vec_tst

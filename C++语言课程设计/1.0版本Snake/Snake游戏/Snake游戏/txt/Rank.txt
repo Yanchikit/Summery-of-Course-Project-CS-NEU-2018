@@ -1,0 +1,11 @@
+Rank:
+No 1
+Name: KKQ Score: 50 Time: 57
+No 2
+Name: asda Score: 45 Time: 48
+No 3
+Name: KKQ Score: 30 Time: 31
+No 4
+Name: 123 Score: 5 Time: 7
+No 5
+Name: a Score: 5 Time: 20

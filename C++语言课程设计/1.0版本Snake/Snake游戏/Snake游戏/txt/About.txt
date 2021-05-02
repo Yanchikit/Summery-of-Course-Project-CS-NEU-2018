@@ -1,0 +1,13 @@
+About:
+
+Operate:
+W A S D or Up Down Left Right
+Esc pause
+
+Mode:
+1、Classical Mode
+2、Normal Mode
+3、Arcade
+(Blue Wall Destructible)
+
+		！！Unknown

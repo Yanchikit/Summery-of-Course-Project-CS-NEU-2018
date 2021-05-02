@@ -1,0 +1,20 @@
+#pragma once
+#include <iostream>
+#include <Windows.h>
+#include <algorithm>
+#include <graphics.h>
+#include <conio.h>
+#include <fstream>
+#include <list>
+#include <tchar.h>
+#include <vector>
+#include <string>
+#include <time.h>
+#include "prepared.h"
+#include "snakes.h"
+#include "map.h"
+#include "bean.h"
+#include "Total.h"
+#include "snakes.h"
+char _mygetch();
+using namespace std;
